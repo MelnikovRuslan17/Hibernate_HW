@@ -4,6 +4,7 @@ import lombok.*;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
+import javax.persistence.Id;
 import java.io.Serializable;
 @Data
 @Builder
@@ -12,11 +13,18 @@ import java.io.Serializable;
 @AllArgsConstructor
 @Embeddable
 public class PersonPrimaryKey implements Serializable {
-    @Column(nullable = false)
+    @Id
+    @Column
     private String name;
-    @Column(nullable = false)
+    @Id
+    @Column
     private String surname;
-    @Column(nullable = false)
+    @Id
+    @Column
     private int age;
+    @Column(name = "phoneOfNumber")
+    private String phoneNumber;
+    @Column(name = "cityOfLiving")
+    private String city;
 
 }
